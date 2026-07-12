@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16020a">
+  <title>恵比寿屋食堂 SLOT V2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="blackout" class="blackout">
+    <div class="blackout-inner">
+      <p class="blackout-small">プチュン…</p>
+      <h2>恵 比 寿 降 臨</h2>
+      <p class="blackout-sub">お待たせしました！</p>
+      <p class="blackout-main">恵比寿カツ丼です！</p>
+    </div>
+  </div>
+
+  <canvas id="confetti"></canvas>
+
+  <main class="app">
+    <section id="machine" class="machine">
+      <div class="ambient-glow"></div>
+
+      <header class="header">
+        <button id="soundToggle" class="sound-toggle" aria-label="音声切り替え">🔊 ON</button>
+        <div class="lantern-row">
+          <span class="lantern">福</span>
+          <span class="lantern">恵</span>
+          <span class="lantern">比</span>
+          <span class="lantern">寿</span>
+          <span class="lantern">福</span>
+        </div>
+        <p class="eyebrow">EBISUYA SHOKUDO</p>
+        <h1>恵比寿屋食堂</h1>
+        <p class="subtitle">超ド派手クーポンスロット V2</p>
+      </header>
+
+      <section class="mascot-stage">
+        <div id="speech" class="speech">今日も運試し、いってみよ！</div>
+        <div id="mascot" class="mascot">
+          <div class="mascot-hair"></div>
+          <div class="mascot-face">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
+            <span class="nose"></span>
+            <span class="mouth"></span>
+          </div>
+          <div class="mascot-body">
+            <span class="apron">店長</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="meter-wrap">
+        <div class="meter-label">
+          <span>期待度</span>
+          <strong id="meterText">★☆☆☆☆</strong>
+        </div>
+        <div class="meter"><div id="meterFill" class="meter-fill"></div></div>
+      </section>
+
+      <section class="reel-frame">
+        <div class="reel-window"><div id="reel0" class="reel">🍜</div></div>
+        <div class="reel-window"><div id="reel1" class="reel">🥟</div></div>
+        <div class="reel-window"><div id="reel2" class="reel">🍚</div></div>
+      </section>
+
+      <div class="stop-row">
+        <button class="stop-btn" data-index="0" disabled><span>LEFT</span>STOP</button>
+        <button class="stop-btn" data-index="1" disabled><span>CENTER</span>STOP</button>
+        <button class="stop-btn" data-index="2" disabled><span>RIGHT</span>STOP</button>
+      </div>
+
+      <button id="leverBtn" class="lever-btn">
+        <span class="lever-knob"></span>
+        <span>レバーON</span>
+      </button>
+
+      <p id="status" class="status">1日1回、店内QRから挑戦！</p>
+
+      <section id="coupon" class="coupon hidden">
+        <p class="coupon-kicker">🎊 COUPON GET 🎊</p>
+        <h2 id="couponTitle">100円引き</h2>
+        <p id="couponText">お会計から100円引き</p>
+        <div class="coupon-code">
+          <small>クーポン番号</small>
+          <strong id="couponCode">EBISU-00000</strong>
+        </div>
+        <p class="expiry">有効期限：本日限り</p>
+        <button id="useBtn" class="use-btn">店員さんが使用済みにする</button>
+      </section>
+
+      <section id="lose" class="lose hidden">
+        <h2>ざんねん！</h2>
+        <p>また明日チャレンジしてね。</p>
+      </section>
+
+      <section id="gate" class="gate hidden">
+        <h2>店内QR限定</h2>
+        <p>恵比寿屋食堂の店内QRコードからアクセスしてください。</p>
+        <a class="demo-link" href="?demo=1">試作モードで遊ぶ</a>
+      </section>
+
+      <p class="note">※試作モードでは回数制限なし。通常モードは同じ端末で1日1回。</p>
+    </section>
+  </main>
+
+  <audio id="voice" preload="auto" src="voice.m4a"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
